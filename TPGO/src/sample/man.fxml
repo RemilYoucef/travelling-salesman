@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ManController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="733.0" style="-fx-border-color: white white  linear-gradient(to bottom right,  #990000,  #3232ff) white; -fx-border-width: 5px;">
+               <children>
+                  <Label alignment="CENTER" text="TP4 : Problème du voyageur du commerce">
+                     <font>
+                        <Font name="Pristina" size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="733.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer le nombre de sommets :">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="11.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="nombre_sommets" prefHeight="25.0" prefWidth="68.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="nouveau_graphe" mnemonicParsing="false" style="-fx-background-color: #3232ff; -fx-text-fill: white;" text="Nouveau graphe">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="11.0" />
+                     </font>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sommet de départ : ">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="11.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="depart" prefHeight="25.0" prefWidth="68.0" />
+                  <Button fx:id="b" alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #990000; -fx-text-fill: white;" text="Executer les algorithmes" textAlignment="CENTER" textOverrun="CLIP">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="70.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <Pane prefHeight="83.0" prefWidth="763.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="382.0" text="© Réalisé par Boutiba Karim &amp; Remil Youcef 2018-2019">
+               <font>
+                  <Font name="Pristina" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </bottom>
+   <left>
+      <AnchorPane fx:id="plan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="485.0" prefWidth="733.0" style="-fx-background-color: white; -fx-border-color: linear-gradient(to bottom right,  #990000,  #3232ff); -fx-border-width: 5px;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="40.0" />
+         </BorderPane.margin></AnchorPane>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: linear-gradient(to bottom right,  #990000,  #3232ff); -fx-border-width: 5px;">
+               <children>
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution de Gluton (Plus proche voisin)">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="te_1" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps d'éxecution : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+                  <Text fx:id="ch1" layoutX="14.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cycle Optimal : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+                  <Text fx:id="c1" layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cout : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: linear-gradient(to bottom right,  #990000,  #3232ff); -fx-border-width: 5px;">
+               <children>
+                  <Text layoutX="12.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution de Gluton (Trie des arètes)">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="te_2" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps d'éxecution : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+                  <Text fx:id="ch2" layoutX="14.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cycle Optimal : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+                  <Text fx:id="c2" layoutX="15.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cout : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: linear-gradient(to bottom right,  #990000,  #3232ff); -fx-border-width: 5px;">
+               <children>
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solution Exacte ou Triviale ">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="te_3" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps d'éxecution : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+                  <Text fx:id="ch3" layoutX="14.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cycle Optimal : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+                  <Text fx:id="c3" layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cout : ">
+                     <font>
+                        <Font name="Century Gothic" size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+         </children>
+         <BorderPane.margin>
+            <Insets right="40.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
